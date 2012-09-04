@@ -1,12 +1,12 @@
 declare
 fun {Max X Y}
    if X == 0 then
-     Y
+      Y
    else
       if Y == 0 then
-	 X
+         X
       else
-      1+{Max X-1 Y-1}
+         1+{Max X-1 Y-1}
       end
    end
 end

@@ -40,25 +40,31 @@ fun {Append Xs Ys}
       Ys
    else
       case Xs of nil then nil
-      [] H|T then H|{Append Xs T}
+      [] H|T then H|{Append T Ys}
       end
    end
 end
 
 fun {Member Xs Y}
-   if Xs.1 == nil then
+   if Xs == nil then
       false
    elseif Y == Xs.1 then
       true
    else
       case Xs of nil then nil
-      [] H|T then H|{Member Xs T}
+      [] H|T then {Member T Y}
       end
    end
 end
 
-{Show {Append [1 2] [3 4]}}
-{Show {Append [1 2 3 4 5] [10 11 12 13 14 15]}}
+fun {Position Xs Y}
+   if Xs.1 == Y then
+      1
+   else
+      case Xs of nil then nil
+      [] H|T then 1+{Position T Y}
+      end
+   end 
+end
 
-{Show {Member [1 2 3 4] 1}}
-{Show {Member [1 2 3 4] 5}}
+{Show {Position [11 21 3] 3}}

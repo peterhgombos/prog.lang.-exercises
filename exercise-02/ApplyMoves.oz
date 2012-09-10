@@ -22,5 +22,3 @@ fun {ApplyMoves State Moves}
    else State
    end
 end
-
-{Show {ApplyMoves state(main:[a b] trackA:nil trackB:nil) [trackA(1) trackB(1) trackA(~1)]}} 

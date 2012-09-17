@@ -14,3 +14,5 @@ end
 fun {SplitTrain Xs Y}
     {Take Xs {Position Xs Y}-1}#{Drop Xs {Position Xs Y}}
 end
+
+{Show {Find [a b] [b a]}}

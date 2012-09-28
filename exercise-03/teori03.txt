@@ -13,3 +13,13 @@ Task 1: Løse og bundne identifikatorer
 |      c)     | P, Q, Z     | X, Y    |
 |      e)     | X, P, Q, Y  | Y       |
 \-------------------------------------/
+
+
+Task 2: Eksterne referanser
+===========================
+
+a) Q
+b) P
+c) Q, Z, U
+d) Q, U
+e) Q

@@ -23,3 +23,17 @@ b) P
 c) Q, Z, U
 d) Q, U
 e) Q
+
+Task 4: Deklarasjon av flere variable
+=====================================
+
+The semantic statement is:
+
+(local <x>1, ..., <x>n in <s> end,E)
+
+Execution consisists of the following actions:
+
+* Create new variables x1, ..., xn in the store
+* Let E' be E + {<x>1 -> x1, ..., <x>n -> xn}
+* Push (<s>, E') on the stack
+

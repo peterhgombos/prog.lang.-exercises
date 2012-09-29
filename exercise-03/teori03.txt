@@ -37,3 +37,33 @@ Execution consisists of the following actions:
 * Let E' be E + {<x>1 -> x1, ..., <x>n -> xn}
 * Push (<s>, E') on the stack
 
+k 5: Eksekvering med den abstrakte maskinen
+==============================================
+OBS! Hva menes med "hvilken regel som brukes"?
+a)
+0: ( [( local B in if B then skip else skip end end, ∅ )], ∅ )
+1: ( [( if B then skip else skip end, {B->b} )], b )
+Får ikke noen flere steg, venter på at b skal bli bundet
+
+b)
+0: ( [( local B in B = false if B then skip else skip end end, ∅ )], ∅ )
+1: ( [( B = false, {B->b} ) ( if B then skip else skip end, {B->b} )], b )
+2: ( [( skip, {B->b} ), b=false)
+3: ( [nil, b=false)
+Stakken er tom, ingen flere steg
+
+c)
+00: ( [( local X Z A B P in proc {P X Y} Y = X + Z end Z = 7 X = 4 {P X A} {P A B} end, ∅)], ∅)
+01: ( [( proc {P X Y} Y = X + Z end Z = 7 X = 4 {P X A} {P A B}, {X->x, Z->z, A->a, B->b, P->p})], x, z, a, b, p)
+02: ( [( proc {P X Y} Y = X + Z end, {X->x, Z->z, A->a, B->b, P->p), (Z = 7 X = 4 {P X A} {P A B}, {X->x, Z->z, A->a, B->b, P->p})], x, z, a, b, p)
+03: ( [(Z = 7 X = 4 {P X A} {P A B}, {X->x, Z->z, A->a, B->b, P->p})], x, z, a, b, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
+04: ( [(Z = 7, {X->x, Z->z, A->a, B->b, P->p), (X = 4 {P X A} {P A B}, {X->x, Z->z, A->a, B->b, P->p})], x, z, a, b, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
+05: ( [(X = 4 {P X A} {P A B}, {X->x, Z->z, A->a, B->b, P->p})], x, z=7, a, b, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
+06: ( [(X = 4, {X->x, Z->z, A->a, B->b, P->p}), ({P X A} {P A B}, {X->x, Z->z, A->a, B->b, P->p})], x, z=7, a, b, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
+07: ( [({P X A} {P A B}, {X->x, Z->z, A->a, B->b, P->p})], x=4, z=7, a, b, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
+08: ( [({P X A}, {X->x, Z->z, A->a, B->b, P->p}), ({P A B}, {X->x, Z->z, A->a, B->b, P->p})], x=4, z=7, a, b, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
+09: ( [(Y = X + Z, {X->x, Z->z, Y->a}), ({P A B}, {X->x, Z->z, A->a, B->b, P->p})], x=4, z=7, a, b, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
+10: ( [({P A B}, {X->x, Z->z, A->a, B->b, P->p})], x=4, z=7, a=11, b, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
+11: ( [(Y = X + Z, {X->a, Z->z, Y->b)], x=4, z=7, a=11, b, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
+12: ( nil, x=4, z=7, a=11, b=18, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
+Stakken er tom, ingen flere steg

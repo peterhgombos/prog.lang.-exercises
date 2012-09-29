@@ -37,8 +37,9 @@ Execution consisists of the following actions:
 * Let E' be E + {<x>1 -> x1, ..., <x>n -> xn}
 * Push (<s>, E') on the stack
 
-k 5: Eksekvering med den abstrakte maskinen
+Task 5: Eksekvering med den abstrakte maskinen
 ==============================================
+
 OBS! Hva menes med "hvilken regel som brukes"?
 a)
 0: ( [( local B in if B then skip else skip end end, ∅ )], ∅ )

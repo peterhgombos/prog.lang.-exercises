@@ -69,7 +69,7 @@ c)
 12: ( nil, x=4, z=7, a=11, b=18, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
 Stakken er tom, ingen flere steg
 
-Task 5: Unifikasjon
+Task 6: Unifikasjon
 ==============================================
 
 a) Unifiseringen feiler fordi 2 ikke er lik 3, og ikke kan bli det.

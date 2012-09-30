@@ -68,3 +68,12 @@ c)
 11: ( [(Y = X + Z, {X->a, Z->z, Y->b)], x=4, z=7, a=11, b, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
 12: ( nil, x=4, z=7, a=11, b=18, p=(proc {$ P X Y} Y = X + Z end, {Z->z})
 Stakken er tom, ingen flere steg
+
+Task 5: Unifikasjon
+==============================================
+
+a) Unifiseringen feiler fordi 2 ikke er lik 3, og ikke kan bli det.
+b) Kan unifiseres. X = a, Y = a, Z = a
+c) Kan unifiseres. D = 1|2|3|4|Y|nil, X = 3|4|Y|nil
+d) Kan ikke unifseres, fordi listene ikke er like. 
+e) Kan unifiseres. X = 1|2|3|4|Y, Y = 3|4|Y. Vi får rekursivt Y = 3|4|3|4|3|4| ... uendelig. Dette fører også til at X = 1|2|3|4|3|4|3|4|3|4 ...

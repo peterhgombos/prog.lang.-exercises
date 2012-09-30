@@ -11,7 +11,7 @@ Task 1: Løse og bundne identifikatorer
 |      a)     | P, Y        | X       |
 |      b)     | Z           | X, Y    |
 |      c)     | P, Q, Z     | X, Y    |
-|      e)     | X, P, Q, Y  | Y       |
+|      d)     | X, P, Q, Y  | Y       |
 \-------------------------------------/
 
 
@@ -70,7 +70,7 @@ c)
 Stakken er tom, ingen flere steg
 
 Task 6: Unifikasjon
-==============================================
+===================
 
 a) Unifiseringen feiler fordi 2 ikke er lik 3, og ikke kan bli det.
 b) Kan unifiseres. X = a, Y = a, Z = a

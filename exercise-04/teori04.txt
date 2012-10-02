@@ -1,0 +1,12 @@
+#====================#
+| Øving 4 - teoridel |
+#====================#
+
+Task 1: Teori
+======================================
+
+a) {Nth S N _} tar inn en strøm S og et heltall N. Nth kjøres rekursivt N ganger og vil for hver gang legge til det neste tallet i strømmen til en liste som den til slutt returnerer.
+ 
+b) En liste avsluttes med en nil, og har låst lengde, mens en strøm avsluttes med en ubunden variabel/et funksjonskall, og kan utvides i det uendelige av en produsent.
+
+c) 

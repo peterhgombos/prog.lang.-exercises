@@ -9,4 +9,4 @@ a) {Nth S N _} tar inn en strøm S og et heltall N. Nth kjøres rekursivt N ganger
  
 b) En liste avsluttes med en nil, og har låst lengde, mens en strøm avsluttes med en ubunden variabel/et funksjonskall, og kan utvides i det uendelige av en produsent.
 
-c) 
+c) Funksjoner med lat utføring (lazy execution) kan forårsake exceptions, i likhet med alle andre funksjoner.

@@ -9,4 +9,4 @@ a) {Nth S N _} tar inn en strøm S og et heltall N. Nth kjøres rekursivt N ganger
  
 b) En liste avsluttes med en nil, og har låst lengde, mens en strøm avsluttes med en ubunden variabel/et funksjonskall, og kan utvides i det uendelige av en produsent.
 
-c) 
+c) Exceptions kastes av funksjoner som kalles lazy, men de blir kastet av den "indre tråden." For å få exceptions til å oppdages av den ytre tråden må kjernespråket utvides med mulighet for å motta metainformasjon om en exception.

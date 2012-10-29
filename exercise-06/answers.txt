@@ -1,0 +1,17 @@
+Task 2
+======
+
+a)
+
+The parser does not know anything about semantics, and will therefore be able to accept programs that are not valid. A simple example is one with the attempted rebinding of variables. Consider the excerpt:
+
+..
+Variable = 1
+Variable = 2
+..
+
+It is syntactically correct, but semantically incorrect.
+
+b)
+
+A parser is relevant for programming languages so that the syntax can be easily verified and faster compiled or interpreted.

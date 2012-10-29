@@ -1,0 +1,11 @@
+local Square in 
+   Square = proc{$ X Y}
+      {`*` X X Y}
+   end
+   local X in
+      X = 2
+      local Y in
+         {Square X Y}
+      end
+   end
+end

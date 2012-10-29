@@ -1,0 +1,46 @@
+local Search in
+local Key in
+local Left in
+local Right in
+local Tree in
+local Target in
+local Result in
+
+Search = proc{$ Target Tree Result}
+	    case Tree
+	    of tree(key:Key left:Left right:Right) then
+	       local TargetFound in
+		  {`==` Key Target TargetFound}
+		  if TargetFound then Result = true
+		  else local LeftResult in
+			  {Search Target Left LeftResult}
+			  if LeftResult then Result = true
+			  else local RightResult in
+				  {Search Target Right RightResult}
+				  if RightResult then Result = true
+				  else Result = false
+				  end
+			       end
+			  end
+		       end
+		  end
+	       end
+	    else Result = false 
+	    end
+	 end
+
+
+Key = 1
+Left = nil
+Right = nil
+Tree = tree(key:Key left:Left right:Right)
+Target = 1
+{Search Target Tree Result}
+
+end
+end
+end
+end
+end
+end
+end

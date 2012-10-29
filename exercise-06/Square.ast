@@ -1,0 +1,10 @@
+ast(var_cr(
+    ident('Square') 
+    stat_seq(val_cr(ident('Square')
+                    'proc'([ident('X') ident('Y')]
+                           proc_app(ident('*')
+                                    [ident('X') ident('X') ident('Y')])))
+             var_cr(ident('X')
+                    stat_seq(val_cr(ident('X') int(2))
+                             var_cr(ident('Y')
+                                    proc_app(ident('Square') [ident('X') ident('Y')])))))))
